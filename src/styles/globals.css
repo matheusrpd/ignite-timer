@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+
+  button,
+  textarea,
+  input {
+	  @apply font-sans text-base font-normal;
+  }
+
+  :focus {
+    outline: 0;
+    box-shadow: 0 0 0 2px theme('colors.green.500');
+  }
+}
+
+@layer components {
+  .navLink {
+    @apply h-12 w-12 flex justify-center items-center border-y-[3px] border-solid border-transparent hover:border-b-green-500 transition-colors;
+  }
+
+  .input {
+    @apply bg-transparent h-10 py-0 px-2 border-0 border-b border-gray-500 border-solid text-center font-bold text-lg text-gray-100 placeholder:text-gray-500 focus:shadow-none focus:border-green-500 transition-colors;
+  }
+
+  .input::-webkit-calendar-picker-indicator {
+    display: none !important;
+  }
+}
